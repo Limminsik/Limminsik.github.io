@@ -47,9 +47,9 @@ nav.top .wrap{display:flex;align-items:center;height:62px;gap:24px}
 .herogrid{display:grid;grid-template-columns:230px 1fr;gap:52px;align-items:center}
 .eyebrow{font:500 11.5px var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);display:flex;gap:12px;align-items:center}
 .eyebrow b{width:28px;height:1px;background:var(--accent)}
-h1.hl{font:400 clamp(40px,6vw,76px)/1.04 var(--serif);letter-spacing:-.01em;margin:16px 0 20px;max-width:17ch}
-h1.hl span{font-style:italic;color:var(--accent)}
-.lede{font-size:clamp(16.5px,1.5vw,19px);line-height:1.65;color:var(--ink2);max-width:58ch;margin:0 0 24px}
+h1.hl{font:400 clamp(32px,4.4vw,58px)/1.08 var(--serif);letter-spacing:-.01em;margin:14px 0 18px}
+h1.hl .nb span{font-style:italic;color:var(--accent)}
+.lede{font-size:clamp(16px,1.3vw,17.5px);line-height:1.7;color:var(--ink2);max-width:none;margin:0 0 22px}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
 .portrait{margin:0;width:230px;height:280px;border-radius:12px;border:1px solid var(--line2);background:linear-gradient(160deg,var(--bg2),var(--card));display:grid;place-items:center;color:var(--ink3);font-size:13px}
 .kpis{display:grid;grid-template-columns:repeat(5,1fr);margin-top:48px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line2)}
@@ -59,7 +59,7 @@ h1.hl span{font-style:italic;color:var(--accent)}
 /* section heads */
 .sec{padding:60px 0 0}
 .shead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
-.shead h2{font:400 clamp(30px,3.8vw,44px)/1.1 var(--serif);margin:8px 0 0}
+.shead h2{font:400 clamp(26px,3vw,36px)/1.15 var(--serif);margin:8px 0 0}
 .shead h2 em{color:var(--accent)}
 .shead p{color:var(--ink2);margin:10px 0 0;max-width:54ch;line-height:1.6}
 /* stage */
@@ -190,6 +190,12 @@ footer{border-top:1px solid var(--line2);color:var(--ink3);font-size:14px;paddin
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--on);padding:9px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;z-index:60;pointer-events:none}
 .toast.show{opacity:1}
 .view{display:none}.view.on{display:block}
+.nb{display:inline-block}
+.abl{display:flex;flex-direction:column;gap:18px}
+.roles{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.roles li{font:400 17px/1.35 var(--serif);font-style:italic;color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line2)}
+.roles li:first-child{color:var(--accent)}
+.ab .lede,.ab p{max-width:none}
 .portrait{background:#dfe3ea url("assets/portrait.jpg") center 30%/cover;color:transparent;font-size:0;overflow:hidden}
 .logo svg.lg{width:36px;height:36px;display:block}
 #langbtn button{padding:5px 9px}
@@ -197,8 +203,8 @@ h1,h2,h3{text-wrap:balance}.ent h4{text-wrap:pretty}
 :lang(ko) body{word-break:keep-all;--text:"Pretendard Variable","Pretendard","Noto Sans KR",system-ui,sans-serif}
 .kt,:lang(ko) h1.hl,:lang(ko) .logo span{font-family:"Pretendard Variable","Pretendard","Noto Sans KR",system-ui,sans-serif!important;font-style:normal}
 :lang(ko) .logo span{font-weight:700;letter-spacing:-.02em}
-:lang(ko) h1.hl{font-weight:700;letter-spacing:-.035em;line-height:1.25;font-size:clamp(32px,4.4vw,54px);max-width:none;margin:14px 0 18px}
-:lang(ko) h1.hl span{font-style:normal}
+:lang(ko) h1.hl{font-weight:700;letter-spacing:-.035em;line-height:1.3;font-size:clamp(28px,3.8vw,48px);margin:14px 0 18px}
+:lang(ko) h1.hl .nb span{font-style:normal}
 .prj h4.kt,.pat b.kt,.tl .it b.kt{font-weight:600;letter-spacing:-.015em;font-size:17.5px;line-height:1.5}
 .ent h4.kt{font-weight:600;font-size:17px;line-height:1.5;letter-spacing:-.01em}
 .full h2.kt{font-weight:700;letter-spacing:-.025em;line-height:1.4}
@@ -271,7 +277,7 @@ a.logo{text-decoration:none;color:inherit}
 .kpisec .kpis{margin-top:22px}
 .pg{padding:56px 0 20px}
 .ph .eyebrow{margin-bottom:8px}
-.ph h1{font:400 clamp(34px,4.4vw,52px)/1.08 var(--serif);margin:6px 0 10px}
+.ph h1{font:400 clamp(28px,3.4vw,42px)/1.12 var(--serif);margin:6px 0 10px}
 .ph h1 em{color:var(--accent)}
 .ph p{color:var(--ink2);max-width:none;line-height:1.6;margin:0;text-wrap:pretty}
 .lede,.ab p{text-wrap:pretty}
@@ -363,6 +369,17 @@ a.logo{text-decoration:none;color:inherit}
   .apanel{position:static;width:auto;margin:0 10px 12px;max-height:340px}.anav{left:auto;right:14px;top:14px;bottom:auto}.anav button{width:32px;height:32px}
   .alabels .al b{display:none}.alabels .al em{font-size:12px;opacity:.95}.alabels .gl b{font-size:15px}
   .pr{grid-template-columns:1fr;gap:6px}.pr .org{justify-self:start}.pr .rt{flex-direction:row;align-items:center;justify-content:flex-start}
+  .nb{display:inline}
+  .navl a{font-size:13.5px!important;padding:5px 7px!important}.navl{gap:0!important}
+  .hero{padding-top:26px!important;padding-bottom:12px!important}.herogrid{gap:16px!important}h1.hl{font-size:31px!important;margin:10px 0 12px!important}:lang(ko) h1.hl{font-size:27px!important}
+  .lede{font-size:15.5px;line-height:1.65}.cta{gap:7px}.cta .pill{padding:7px 12px;font-size:13.5px}
+  .sec{padding-top:34px!important}.shead h2{font-size:25px!important}
+  .pg{padding-top:30px!important;padding-bottom:16px!important}.ph h1{font-size:28px!important}.psec{margin-top:28px}.psec>h2{font-size:22px}
+  .ab{gap:18px!important}.abl{flex-direction:row;align-items:stretch;gap:14px}.abl .portrait{flex:none}.roles{flex:1;align-self:center}.roles li{font-size:15px;padding:8px 0}
+  .ab p{font-size:15.5px}
+  .ent h4{font-size:17px}.prj h4{font-size:17px}.tc{padding:16px}.tc h4{font-size:20px}
+  .pn{flex-direction:column}.pn button{max-width:none!important}.full .wrap{padding-top:22px}
+  .jump{gap:6px;padding:9px 0}.jump a{padding:5px 11px;font-size:13px}
   .prj{grid-template-columns:1fr}.tc .acts{grid-row:auto;grid-column:1}
   .herogrid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.yg{grid-template-columns:1fr}.yg .yr{padding-top:14px}.ab{grid-template-columns:1fr}.ab .portrait{width:120px;height:146px}.tc{grid-template-columns:1fr}.tc .gh{grid-row:auto;grid-column:1;justify-self:start}.navl{overflow-x:auto;max-width:100%}
   .kpis{grid-template-columns:repeat(3,1fr)}.kpi{border-right:0}.kpi .v{font-size:32px}
@@ -474,7 +491,7 @@ const ROLE={PM:["Project Manager","실무책임자"],PI:["Principal Investigator
  ["Establishing the Foundation of a Quality Management Framework for the Health Data Bank","데이터뱅크 품질관리체계 기반 마련 연구","Korea Health Information Service (KHIS)","한국보건의료정보원","R",2025.67,null,
    ["Trend analysis of health data programs","Interviews with national health data programs (K-CURE, KoGES, KNHANES, Kangbuk Samsung cohort)","Designed the data bank's quality verification framework","Performed quality verification of data bank data"],["보건의료데이터 사업 동향 분석 수행","국내 보건의료데이터 사업 인터뷰 담당 (K-CURE, KoGES, 국건영, 강북삼성병원 코호트)","데이터뱅크 데이터 품질검증 체계 설계","데이터뱅크 데이터 품질검증 수행"]],
  ["2025 Quality Verification of Training Data for Hyperscale AI","25' 초거대AI 학습용 데이터 품질검증 과제","National Information Society Agency (NIA)","한국지능정보사회진흥원 (NIA)","R",2025.5,2025.92,
-   ["Quality verification of hyperscale AI training data","In charge of the musculoskeletal-disease biosignal dataset; built its semantic-accuracy verification tool (StrideX)","In charge of diversity and syntactic-accuracy verification for 11 datasets","Developed tools for data accuracy and statistical diversity verification"],["초거대 AI 데이터 품질검증 수행","근골격계 질환 생체신호 데이터 품질검증 담당 — 의미정확성 품질검증 도구(StrideX) 개발","11종 데이터 다양성·구문정확성 품질검증 담당","데이터 정확성 및 통계다양성 검증 도구 개발"]],
+   ["Quality verification of hyperscale AI training data","In charge of the musculoskeletal-disease biosignal dataset; built its semantic-accuracy verification tool (StrideX-QC)","In charge of diversity and syntactic-accuracy verification for 11 datasets","Developed tools for data accuracy and statistical diversity verification"],["초거대 AI 데이터 품질검증 수행","근골격계 질환 생체신호 데이터 품질검증 담당 — 의미정확성 품질검증 도구(StrideX-QC) 개발","11종 데이터 다양성·구문정확성 품질검증 담당","데이터 정확성 및 통계다양성 검증 도구 개발"]],
  ["Health Age Estimation and Analysis Using National Health Screening Data","건강검진 데이터를 활용한 건강나이 산출 및 분석 연구","Korean Society of Medical Informatics (KOSMI)","대한의료정보학회","R",2025.42,2026.42,
    ["IRB and study design support","Collected NHIS health screening data","Collected Gachon University Gil Medical Center health screening data"],["연구 IRB 담당 및 연구 설계 지원","국민건강보험공단 검진데이터 수집","가천대 길병원 건강검진 데이터 수집"]],
  ["2025 MediSign: Medical Signal Data Quality Research Group","2025 MediSign: 의료 신호 데이터 품질 연구모임","Korean Society of Medical Informatics (KOSMI)","대한의료정보학회","PI",2025.25,2025.92,
@@ -506,7 +523,7 @@ const ROLE={PM:["Project Manager","실무책임자"],PI:["Principal Investigator
 [["DAC-Q","Rule-based tool for assessing data accuracy and diversity of AI training data","AI 학습용 데이터의 정확성·다양성을 규칙 기반으로 검증하는 품질 도구",2026.85,null,"https://github.com/Limminsik/DAC-Q",true],
  ["AVS Monitor","Monitoring dashboard for data collection in the wearable aortic valve stenosis cohort (Gachon University Gil Medical Center)","대동맥판막협착증 웨어러블 코호트(가천대 길병원)의 수집 현황 모니터링 대시보드",2026.75,"https://limminsik.github.io/AVS_monitor/","https://github.com/Limminsik/AVS_monitor"],
  ["Gachon Scholar","Multi-agent platform for systematic literature review — a PRISMA 2020 pipeline from search to final report","체계적 문헌고찰을 위한 멀티 에이전트 플랫폼 — 검색부터 최종 보고서까지 PRISMA 2020 파이프라인",2026.42,null,"https://github.com/Limminsik/gachonscholar"],
- ["StrideX","Semantic-accuracy quality dashboard for gait biosignals (IMU, smart insole, gait mat)","보행 생체신호(IMU·스마트 인솔·보행 매트) 의미정확성 품질검증 대시보드",2025.72,null,"https://github.com/Limminsik/StrideX"]
+ ["StrideX-QC","Semantic-accuracy quality dashboard for gait biosignals (IMU, smart insole, gait mat) — ID, gait-cycle and labeling checks","보행 생체신호(IMU·스마트 인솔·보행 매트) 의미정확성 품질검증 대시보드 — ID·보행 주기·라벨링 검수",2025.9,"https://limminsik.github.io/StrideX_QC/","https://github.com/Limminsik/StrideX_QC"]
 ].forEach(([ti,d,dk,t,url,code,pv])=>add({kind:"build",type:"tool",t,title:ti,desc:d,desc_ko:dk,url,code,private:pv,sum:[d],sum_ko:[dk]}));
 [["System and Method for Semantic Accuracy Verification of Multimodal Biosignal Data Quality","멀티모달 생체신호 데이터 품질을 위한 의미정확성 검증 시스템 및 방법","10-2026-0109940",2026.4],
  ["Text Data Quality Assessment Platform Based on Prompt Evaluation Metrics Using Large Language Models","대규모 언어 모델을 사용한 프롬프트 평가지표 기반의 텍스트 데이터 품질 평가 플랫폼","10-2026-0151045",2026.6],
@@ -553,8 +570,8 @@ const authorsHTML=r=>lf(r,"authors").split(", ").map(a=>ME(a)?`<b>${a}</b>`:a).j
 const onGoing=r=>!r.end||r.end>=2026.85;
 const LINKS={li:"https://www.linkedin.com/in/minsik-lim-502564278/",gs:"https://scholar.google.com/citations?user=qLMM9xAAAAAJ",or:"https://orcid.org/0009-0009-3834-091X",gh:"https://github.com/Limminsik",mail:"ms4002@gachon.ac.kr"};
 const linkPills=()=>`<a class="pill" href="${LINKS.li}" target="_blank" rel="noopener">LinkedIn</a><a class="pill" href="${LINKS.gs}" target="_blank" rel="noopener">Google Scholar</a><a class="pill" href="${LINKS.or}" target="_blank" rel="noopener">ORCID</a><a class="pill" href="${LINKS.gh}" target="_blank" rel="noopener">GitHub</a>`;
-const BIO=()=>[tx("I am a Ph.D. student in Computer Engineering at Gachon University, focusing on medical data quality and biosignal AI: building frameworks to assess and standardize clinical data, and developing noise-robust, interpretable models for signals.","가천대학교 컴퓨터공학 박사과정에서 의료 데이터 품질과 생체신호 AI를 연구하고 있습니다. 임상 데이터의 품질을 평가하고 표준화하는 체계를 만들고, 잡음에 강하고 해석할 수 있는 생체신호 모델을 개발합니다."),
-  tx("I hold a B.S. in Healthcare Management (2023) and an M.E. in Computer Engineering (2025), both from Gachon University. That mix of healthcare and engineering shapes how I approach problems at the intersection of clinical data and machine learning.","가천대학교에서 의료경영학 학사(2023)와 컴퓨터공학 석사(2025) 학위를 받았습니다. 보건의료와 공학을 함께 공부한 경험을 바탕으로, 임상 데이터와 기계학습이 만나는 문제를 다룹니다.")];
+const BIO=()=>[tx('<span class="nb">I am a Ph.D. student in Computer Engineering at Gachon University,</span> <span class="nb">focusing on medical data quality and biosignal AI:</span> <span class="nb">building frameworks to assess and standardize clinical data,</span> <span class="nb">and developing noise-robust, interpretable models for signals.</span>','<span class="nb">가천대학교 컴퓨터공학 박사과정에서</span> <span class="nb">의료 데이터 품질과 생체신호 AI를 연구하고 있습니다.</span> <span class="nb">임상 데이터의 품질을 평가하고 표준화하는 체계를 만들고,</span> <span class="nb">잡음에 강하고 해석할 수 있는 생체신호 모델을 개발합니다.</span>'),
+  tx('<span class="nb">I hold a B.S. in Healthcare Management (2023)</span> <span class="nb">and an M.E. in Computer Engineering (2025), both from Gachon University.</span> <span class="nb">That mix of healthcare and engineering shapes how I approach problems</span> <span class="nb">at the intersection of clinical data and machine learning.</span>','<span class="nb">가천대학교에서 의료경영학 학사(2023)와</span> <span class="nb">컴퓨터공학 석사(2025) 학위를 받았습니다.</span> <span class="nb">보건의료와 공학을 함께 공부한 경험을 바탕으로,</span> <span class="nb">임상 데이터와 기계학습이 만나는 문제를 다룹니다.</span>')];
 
 function renderStatic(){document.documentElement.lang=LANG;setTimeout(navH,0);
   $("#t-logo").textContent=tx("Minsik Lim","임민식");
@@ -563,8 +580,8 @@ function renderStatic(){document.documentElement.lang=LANG;setTimeout(navH,0);
   const tb=document.querySelectorAll("#themebtn button");tb[0].textContent="☀ Day";tb[1].textContent="☾ Night";
   document.querySelectorAll("#langbtn button").forEach(b=>b.classList.toggle("on",b.dataset.lang===LANG));
   $("#t-hero").innerHTML=`<div class="eyebrow"><b></b>AI/ML in Medicine · Medical Data Quality &amp; Biosignal AI</div>
-    <h1 class="hl">${tx("Making health data <span>trustworthy</span> for AI.","의료 데이터를, AI가 <span>믿고 쓸 수 있게.</span>")}</h1>
-    <p class="lede">${tx("I am Minsik Lim, a Ph.D. student in Computer Engineering at Gachon University. I work on medical data quality and biosignal AI — building frameworks to assess and standardize clinical data, and developing noise-robust, interpretable models for signals.","가천대학교 컴퓨터공학 박사과정 임민식입니다. 의료 데이터 품질과 생체신호 AI를 연구하고 있습니다. 임상 데이터의 품질을 평가하고 표준화하는 체계를 만들고, 잡음에 강하고 해석할 수 있는 생체신호 모델을 개발합니다.")}</p>
+    <h1 class="hl">${tx('<span class="nb">Making health data</span> <span class="nb"><span>trustworthy</span> for AI.</span>','<span class="nb">의료 데이터를,</span> <span class="nb">AI가 <span>믿고 쓸 수 있게.</span></span>')}</h1>
+    <p class="lede">${tx('<span class="nb">I am Minsik Lim, a Ph.D. student in Computer Engineering at Gachon University.</span> <span class="nb">I work on medical data quality and biosignal AI —</span> <span class="nb">building frameworks to assess and standardize clinical data,</span> <span class="nb">and developing noise-robust, interpretable models for signals.</span>','<span class="nb">가천대학교 컴퓨터공학 박사과정 임민식입니다.</span> <span class="nb">의료 데이터 품질과 생체신호 AI를 연구하고 있습니다.</span> <span class="nb">임상 데이터의 품질을 평가하고 표준화하는 체계를 만들고,</span> <span class="nb">잡음에 강하고 해석할 수 있는 생체신호 모델을 개발합니다.</span>')}</p>
     <div class="cta"><button class="pill solid" data-cv>CV ↓</button>${linkPills()}</div>`;
   $("#t-shead").innerHTML=`<div><div class="eyebrow"><b></b>Atlas</div><h2>My work, <em>at a glance.</em></h2></div>`;
   $("#t-foot").textContent=tx("© 2026 Minsik Lim · Gachon University","© 2026 임민식 · 가천대학교");
@@ -601,8 +618,8 @@ function renderTech(){const B=ITEMS.build.slice().sort((a,b)=>b.t-a.t);const too
   <div class="psec"><h2>Software <span>${tools.length}</span></h2><div class="tcs">${tools.map(tcard).join("")}</div></div>
   <div class="psec"><h2>Patent applications <span>${pats.length}</span></h2><div class="prs">${pats.map(r=>`<div class="pat" data-ent="${r.id}"><b class="${kt(lf(r,"title")).trim()}">${lf(r,"title")}</b><span>${tx("KR Patent Application No.","대한민국 특허출원")} ${r.no}</span></div>`).join("")}</div></div>`}
 function renderAbout(){const M=ITEMS.milestone.slice().sort((a,b)=>b.t-a.t);const deg=M.filter(r=>r.type==="deg"),aw=M.filter(r=>r.type==="award");const bio=BIO();
-  $("#pg-about").innerHTML=`<div class="ph"><div class="eyebrow"><b></b>${PAGENAME("about")}</div><h1 class="${tx("","kt")}">${tx("Minsik <em>Lim</em>","임민식")}</h1><p>${tx("AI/ML in Medicine · Medical Data Quality &amp; Biosignal AI Researcher · Ph.D. Student in Computer Engineering","의료 인공지능 · 의료 데이터 품질 및 생체신호 AI 연구 · 컴퓨터공학 박사과정")}</p></div>
-  <div class="ab"><figure class="portrait">portrait</figure><div><p>${bio[0]}</p><p>${bio[1]}</p>
+  $("#pg-about").innerHTML=`<div class="ph"><div class="eyebrow"><b></b>${PAGENAME("about")}</div><h1 class="${tx("","kt")}">${tx("Minsik <em>Lim</em>","임민식")}</h1></div>
+  <div class="ab"><div class="abl"><figure class="portrait">portrait</figure><ul class="roles"><li>AI/ML in Medicine</li><li>Medical Data Quality &amp; Biosignal AI Researcher</li><li>Ph.D. Student in Computer Engineering</li></ul></div><div><p>${bio[0]}</p><p>${bio[1]}</p>
   <div class="cvrow"><button class="pill solid" data-cv>CV ↓</button>${linkPills()}<a class="pill" href="mailto:${LINKS.mail}">${LINKS.mail}</a></div>
   <div class="psec"><h2>Education</h2><div class="tl">${deg.map(r=>`<div class="it" data-ent="${r.id}"><b class="${kt(lf(r,"title")).trim()}">${lf(r,"title")}</b><div>${lf(r,"org")} · ${period(r)}</div></div>`).join("")}</div></div>
   <div class="psec"><h2>Awards</h2><div class="tl">${aw.map(r=>`<div class="it aw" data-ent="${r.id}"><b class="${kt(lf(r,"title")).trim()}">${lf(r,"title")}</b><div>${lf(r,"org")} · ${ym(r.t)}</div></div>`).join("")}</div></div></div></div>`}
