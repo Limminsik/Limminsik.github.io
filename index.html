@@ -43,7 +43,7 @@ nav.top .wrap{display:flex;align-items:center;height:62px;gap:24px}
 .themebtn button.on{background:var(--ink);color:var(--on)}
 .themebtn .sm{display:none}
 /* hero */
-.hero{padding:56px 0 24px}
+.hero{padding-top:56px;padding-bottom:24px}
 .herogrid{display:grid;grid-template-columns:230px 1fr;gap:52px;align-items:center}
 .eyebrow{font:500 11.5px var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);display:flex;gap:12px;align-items:center}
 .eyebrow b{width:28px;height:1px;background:var(--accent)}
@@ -57,7 +57,7 @@ h1.hl .nb span{font-style:italic;color:var(--accent)}
 .kpi:last-child{border-right:0}.kpi:hover{background:var(--bg2)}
 .kpi .v{font:600 32px/1 var(--serif)}.kpi .l{font:500 11.5px var(--text);letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);margin-top:6px}
 /* section heads */
-.sec{padding:60px 0 0}
+.sec{padding-top:60px;padding-bottom:0}
 .shead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
 .shead h2{font:400 clamp(24px,2.4vw,30px)/1.15 var(--serif);margin:8px 0 0}
 .shead h2 em{color:var(--accent)}
@@ -191,6 +191,7 @@ footer{border-top:1px solid var(--line2);color:var(--ink3);font-size:14px;paddin
 .toast.show{opacity:1}
 .view{display:none}.view.on{display:block}
 .nb{display:inline-block}
+p .nb{display:block;text-wrap:balance}
 .abl{display:flex;flex-direction:column;gap:18px}
 .roles{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
 .roles li{font:400 17px/1.35 var(--serif);font-style:italic;color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line2)}
@@ -275,7 +276,7 @@ a.tc{text-decoration:none;color:inherit}
 .navl a.on{color:var(--ink);background:var(--bg2);font-weight:500}
 a.logo{text-decoration:none;color:inherit}
 .kpisec .kpis{margin-top:22px}
-.pg{padding:56px 0 20px}
+.pg{padding-top:56px;padding-bottom:20px}
 .ph .eyebrow{margin-bottom:8px}
 .ph h1{font:400 clamp(26px,2.8vw,36px)/1.12 var(--serif);margin:6px 0 10px}
 .ph h1 em{color:var(--accent)}
@@ -369,7 +370,7 @@ a.logo{text-decoration:none;color:inherit}
   .apanel{position:static;width:auto;margin:0 10px 12px;max-height:340px}.anav{left:auto;right:14px;top:14px;bottom:auto}.anav button{width:32px;height:32px}
   .alabels .al b{display:none}.alabels .al em{font-size:12px;opacity:.95}.alabels .gl b{font-size:15px}
   .pr{grid-template-columns:1fr;gap:6px}.pr .org{justify-self:start}.pr .rt{flex-direction:row;align-items:center;justify-content:flex-start}
-  .nb{display:inline}
+  .nb,p .nb{display:inline}
   .navl a{font-size:13.5px!important;padding:5px 7px!important}.navl{gap:0!important}
   .hero{padding-top:26px!important;padding-bottom:12px!important}.herogrid{gap:16px!important}h1.hl{font-size:31px!important;margin:10px 0 12px!important}:lang(ko) h1.hl{font-size:27px!important}
   .lede{font-size:15.5px;line-height:1.65}.cta{gap:7px}.cta .pill{padding:7px 12px;font-size:13.5px}
@@ -538,7 +539,7 @@ const ROLE={PM:["Project Manager","실무책임자"],PI:["Principal Investigator
 ].forEach(([ti,tk,org,ok,t,e,ty])=>add({kind:"milestone",type:ty,t,end:e,title:ti,title_ko:tk,org,org_ko:ok}));
 const B_=s=>R.find(r=>r.kind==="build"&&r.title===s),F=s=>R.find(r=>r.kind!=="build"&&r.title.startsWith(s));
 const LINK=(a,b)=>{if(!a||!b)return;(a.rel=a.rel||[]).push(b.id);(b.rel=b.rel||[]).push(a.id)};
-LINK(B_("DAC-Q"),F("DAC-Q: A Rule-based"));LINK(B_("DAC-Q"),F("2025 Quality Verification"));LINK(B_("StrideX"),F("2025 Quality Verification"));LINK(B_("AVS Monitor"),F("Development of AI Methodologies for a High-Quality"));LINK(F("2024 Quality Verification"),F("AI Synthetic Pathology"));
+LINK(B_("DAC-Q"),F("DAC-Q: A Rule-based"));LINK(B_("DAC-Q"),F("2025 Quality Verification"));LINK(B_("StrideX-QC"),F("2025 Quality Verification"));LINK(B_("AVS Monitor"),F("Development of AI Methodologies for a High-Quality"));LINK(F("2024 Quality Verification"),F("AI Synthetic Pathology"));
 R.forEach(r=>{if(r.authors)r.first=r.authors.startsWith("Minsik Lim")});
 const byId=Object.fromEntries(R.map(r=>[r.id,r]));
 const CV_UPDATED="2026.10";
@@ -581,7 +582,7 @@ function renderStatic(){document.documentElement.lang=LANG;setTimeout(navH,0);
   document.querySelectorAll("#langbtn button").forEach(b=>b.classList.toggle("on",b.dataset.lang===LANG));
   $("#t-hero").innerHTML=`<div class="eyebrow"><b></b>AI/ML in Medicine · Medical Data Quality &amp; Biosignal AI</div>
     <h1 class="hl">${tx('<span class="nb">Making health data</span> <span class="nb"><span>trustworthy</span> for AI.</span>','<span class="nb">의료 데이터를,</span> <span class="nb">AI가 <span>믿고 쓸 수 있게.</span></span>')}</h1>
-    <p class="lede">${tx('<span class="nb">I am Minsik Lim, a Ph.D. student in Computer Engineering at Gachon University.</span> <span class="nb">I work on medical data quality and biosignal AI —</span> <span class="nb">building frameworks to assess and standardize clinical data,</span> <span class="nb">and developing noise-robust, interpretable models for signals.</span>','<span class="nb">가천대학교 컴퓨터공학 박사과정 임민식입니다.</span> <span class="nb">의료 데이터 품질과 생체신호 AI를 연구하고 있습니다.</span> <span class="nb">임상 데이터의 품질을 평가하고 표준화하는 체계를 만들고,</span> <span class="nb">잡음에 강하고 해석할 수 있는 생체신호 모델을 개발합니다.</span>')}</p>
+    <p class="lede">${tx('<span class="nb">I am Minsik Lim, a Ph.D. student in Computer Engineering at Gachon University.</span> <span class="nb">My research focuses on medical data quality and biosignal AI:</span> <span class="nb">frameworks that assess and standardize clinical data,</span> <span class="nb">and noise-robust, interpretable models for physiological signals.</span>','<span class="nb">가천대학교 컴퓨터공학 박사과정 임민식입니다.</span> <span class="nb">의료 데이터 품질과 생체신호 AI를 연구하고 있습니다.</span> <span class="nb">임상 데이터의 품질을 평가하고 표준화하는 체계를 만들고,</span> <span class="nb">잡음에 강하고 해석할 수 있는 생체신호 모델을 개발합니다.</span>')}</p>
     <div class="cta"><button class="pill solid" data-cv>CV ↓</button>${linkPills()}</div>`;
   $("#t-shead").innerHTML=`<div><div class="eyebrow"><b></b>Atlas</div><h2>My work, <em>at a glance.</em></h2></div>`;
   $("#t-foot").textContent=tx("© 2026 Minsik Lim · Gachon University","© 2026 임민식 · 가천대학교");
